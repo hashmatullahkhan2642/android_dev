@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Backend API App</string>
+    <string name="title_activity_main">Backend API App</string>
+    <string name="package_name">com.shubh.backendapp</string>
+    <string name="custom_url_scheme">com.shubh.backendapp</string>
+</resources>

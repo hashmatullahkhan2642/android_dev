@@ -1,14 +1,21 @@
-name: Build and Test React App
+name: Build and Deploy React App
 
 on:
   push:
     branches: [ main, master ]
-  pull_request:
-    branches: [ main, master ]
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +25,7 @@ jobs:
       - name: ⚙️ Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: 'npm'
 
       - name: 📦 Install dependencies
@@ -27,9 +34,9 @@ jobs:
       - name: 🏗️ Build Application
         run: npm run build
 
-      - name: 📤 Upload Build Artifacts (dist)
-        uses: actions/upload-artifact@v4
+      - name: 🚀 Deploy to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          name: dist-build
-          path: dist/
-          retention-days: 7
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true

@@ -6,13 +6,12 @@ A simple, beginner-friendly, and mobile-responsive **React + Vite** web applicat
 
 ## 🚀 Features
 
-- 📱 **Mobile-Friendly UI**: Responsive glassmorphic card design with dark mode styling.
+- 📱 **Mobile-Friendly & Android Native**: Responsive glassmorphic card design, ready for both web and Android Mobile App (`.apk`).
 - ⚡ **Auto Fetch**: Automatically calls the backend API using a `GET` request on page load.
 - 🔄 **Interactive Re-fetch**: Includes a **Check Backend** / **Try Again** button to refresh data on demand.
 - 🛡️ **Safe Response Handling**: Safely parses both `JSON` and `text` responses.
 - 🚦 **Status Indicator**: Clear connection status badges (`Connected ✅`, `Connection Failed ❌`, `Loading... ⏳`).
-- 🔀 **CORS Proxy**: Built-in Vite proxy support to handle cross-origin restrictions gracefully during development.
-- 🤖 **CI/CD Built-in**: GitHub Actions workflow for automatic builds and 1-click GitHub Pages deployment.
+- 🤖 **Automated APK Build**: GitHub Actions workflow (`build-apk.yml`) to automatically compile downloadable Android `.apk` files.
 
 ---
 

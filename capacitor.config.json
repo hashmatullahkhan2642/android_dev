@@ -1,0 +1,8 @@
+{
+  "appId": "com.shubh.backendapp",
+  "appName": "Backend API App",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  }
+}

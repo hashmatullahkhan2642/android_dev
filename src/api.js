@@ -1,4 +1,4 @@
-const API_URL = "https://battle-helmet-nothing-girls.trycloudflare.com";
+const API_URL = "https://extraordinary-affiliated-foam-bargain.trycloudflare.com";
 
 export async function checkBackend() {
   try {
@@ -8,10 +8,9 @@ export async function checkBackend() {
       return await parseResponse(response);
     }
   } catch {
-    // If direct fetch fails (e.g. CORS block in browser), fallback to local proxy endpoint /api/hello
+    // Fallback to local proxy /api/hello if direct fetch hits CORS in browser
   }
 
-  // Proxy request through Vite dev server
   const proxyResponse = await fetch("/api/hello");
   if (!proxyResponse.ok) {
     throw new Error("Backend connection failed");
