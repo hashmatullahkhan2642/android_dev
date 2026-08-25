@@ -14,6 +14,12 @@ export default function App() {
 
     try {
       const result = await checkBackend();
+      
+      // Ensure we don't display raw HTML webpage string
+      if (typeof result === 'string' && (result.trim().startsWith('<!DOCTYPE') || result.trim().startsWith('<html'))) {
+        throw new Error("Invalid API response format");
+      }
+
       setData(result);
       setStatus('connected');
     } catch (err) {
